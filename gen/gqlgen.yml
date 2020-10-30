@@ -1,0 +1,175 @@
+# Generated with graphql-orm
+
+schema:
+  - schema.graphql
+exec:
+  filename: generated.go
+  package: gen
+model:
+  filename: models_gen.go
+  package: gen
+resolver:
+  filename: resolver.go
+  type: Resolver
+  package: gen
+federation:
+  filename: federation.go
+  package: gen
+
+models:
+  
+  Wallet:
+    model: github.com/loopcontext/payment-api-go/gen.Wallet
+    fields:
+      walletType:
+        resolver: true
+      accounts:
+        resolver: true
+      payments:
+        resolver: true
+  WalletResultType:
+    model: github.com/loopcontext/payment-api-go/gen.WalletResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  WalletCreateInput:
+    model: "map[string]interface{}"
+  WalletUpdateInput:
+    model: "map[string]interface{}"
+  
+  WalletType:
+    model: github.com/loopcontext/payment-api-go/gen.WalletType
+    fields:
+      wallet:
+        resolver: true
+  WalletTypeResultType:
+    model: github.com/loopcontext/payment-api-go/gen.WalletTypeResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  WalletTypeCreateInput:
+    model: "map[string]interface{}"
+  WalletTypeUpdateInput:
+    model: "map[string]interface{}"
+  
+  AccountProviderType:
+    model: github.com/loopcontext/payment-api-go/gen.AccountProviderType
+    fields:
+      accountProvider:
+        resolver: true
+  AccountProviderTypeResultType:
+    model: github.com/loopcontext/payment-api-go/gen.AccountProviderTypeResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  AccountProviderTypeCreateInput:
+    model: "map[string]interface{}"
+  AccountProviderTypeUpdateInput:
+    model: "map[string]interface{}"
+  
+  AccountProvider:
+    model: github.com/loopcontext/payment-api-go/gen.AccountProvider
+    fields:
+      accounts:
+        resolver: true
+      accountProviderType:
+        resolver: true
+  AccountProviderResultType:
+    model: github.com/loopcontext/payment-api-go/gen.AccountProviderResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  AccountProviderCreateInput:
+    model: "map[string]interface{}"
+  AccountProviderUpdateInput:
+    model: "map[string]interface{}"
+  
+  Account:
+    model: github.com/loopcontext/payment-api-go/gen.Account
+    fields:
+      accountProvider:
+        resolver: true
+      wallet:
+        resolver: true
+      payments:
+        resolver: true
+  AccountResultType:
+    model: github.com/loopcontext/payment-api-go/gen.AccountResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  AccountCreateInput:
+    model: "map[string]interface{}"
+  AccountUpdateInput:
+    model: "map[string]interface{}"
+  
+  PaymentChannel:
+    model: github.com/loopcontext/payment-api-go/gen.PaymentChannel
+    fields:
+      payment:
+        resolver: true
+  PaymentChannelResultType:
+    model: github.com/loopcontext/payment-api-go/gen.PaymentChannelResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  PaymentChannelCreateInput:
+    model: "map[string]interface{}"
+  PaymentChannelUpdateInput:
+    model: "map[string]interface{}"
+  
+  PaymentType:
+    model: github.com/loopcontext/payment-api-go/gen.PaymentType
+    fields:
+      payment:
+        resolver: true
+  PaymentTypeResultType:
+    model: github.com/loopcontext/payment-api-go/gen.PaymentTypeResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  PaymentTypeCreateInput:
+    model: "map[string]interface{}"
+  PaymentTypeUpdateInput:
+    model: "map[string]interface{}"
+  
+  Payment:
+    model: github.com/loopcontext/payment-api-go/gen.Payment
+    fields:
+      wallet:
+        resolver: true
+      account:
+        resolver: true
+      paymentChannel:
+        resolver: true
+      paymentType:
+        resolver: true
+  PaymentResultType:
+    model: github.com/loopcontext/payment-api-go/gen.PaymentResultType
+    fields:
+      count:
+        resolver: true
+      items:
+        resolver: true
+  PaymentCreateInput:
+    model: "map[string]interface{}"
+  PaymentUpdateInput:
+    model: "map[string]interface{}"
+  
+
+  
+  

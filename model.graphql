@@ -1,0 +1,62 @@
+type Wallet @entity {
+  userId: ID @column(index: "useridx") # Comes from auth-api
+  walletType: WalletType! @relationship(inverse: "wallet")
+  accounts: [Account!]! @relationship(inverse: "wallet")
+  payments: [Payment!]! @relationship(inverse: "wallet")
+  balance: Float! @column(default: 0.0) # Could be a computed field
+}
+
+# Service credit, Work payment, special cases, etc
+type WalletType @entity {
+  name: String! @column
+  description: String @column
+  wallet: Wallet @relationship(inverse: "walletType")
+}
+
+# Bank, mobile provider, Credit house, etc
+type AccountProviderType @entity {
+  name: String! @column
+  description: String @column
+  accountProvider: AccountProvider @relationship(inverse: "accountProviderType")
+}
+
+type AccountProvider @entity {
+  accounts: [Account!]! @relationship(inverse: "accountProvider")
+  accountProviderType: AccountProviderType! @relationship(inverse: "accountProvider")
+  name: String! @column # Name of the entity that provides the account
+  description: String @column
+  address: String @column
+  phone: String @column
+}
+
+type Account @entity {
+  accountProvider: AccountProvider! @relationship(inverse: "accounts")
+  wallet: Wallet! @relationship(inverse: "accounts")
+  payments: [Payment!]! @relationship(inverse: "account")
+  accountNumber: String! @column
+  balance: Float! @column(default: 0.0)
+}
+
+# Bank transfer, Cash deposit, Mobile wallet transfer
+type PaymentChannel @entity {
+  name: String! @column
+  description: String @column
+  payment: Payment @relationship(inverse: "paymentChannel")
+}
+
+# Credit to wallet, Loan payment, etc
+type PaymentType @entity {
+  name: String! @column
+  description: String @column
+  payment: Payment @relationship(inverse: "paymentType")
+}
+
+type Payment @entity {
+  wallet: Wallet @relationship(inverse: "payments")
+  account: Account! @relationship(inverse: "payments")
+  paymentChannel: PaymentChannel! @relationship(inverse: "payment")
+  paymentType: PaymentType! @relationship(inverse: "payment")
+  paymentRef: String @column(index: "prefidx") #reference id or reference for what this payment is for
+  amount: Float! @column(default: 0.0)
+  concept: String @column
+}
