@@ -164,6 +164,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -205,6 +210,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 	if f.UserIDIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("userId")+" IN (?)")
 		values = append(values, f.UserIDIn)
+	}
+
+	if f.UserIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("userId")+" NOT IN (?)")
+		values = append(values, f.UserIDNotIn)
 	}
 
 	if f.UserIDNull != nil {
@@ -250,6 +260,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 		values = append(values, f.BalanceIn)
 	}
 
+	if f.BalanceNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("balance")+" NOT IN (?)")
+		values = append(values, f.BalanceNotIn)
+	}
+
 	if f.BalanceNull != nil {
 		if *f.BalanceNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("balance")+" IS NULL")
@@ -291,6 +306,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 	if f.WalletTypeIDIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("walletTypeId")+" IN (?)")
 		values = append(values, f.WalletTypeIDIn)
+	}
+
+	if f.WalletTypeIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("walletTypeId")+" NOT IN (?)")
+		values = append(values, f.WalletTypeIDNotIn)
 	}
 
 	if f.WalletTypeIDNull != nil {
@@ -336,6 +356,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 		values = append(values, f.UpdatedAtIn)
 	}
 
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
+	}
+
 	if f.UpdatedAtNull != nil {
 		if *f.UpdatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IS NULL")
@@ -377,6 +402,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 	if f.CreatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IN (?)")
 		values = append(values, f.CreatedAtIn)
+	}
+
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
 	}
 
 	if f.CreatedAtNull != nil {
@@ -422,6 +452,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -463,6 +498,11 @@ func (f *WalletFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix string
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -551,6 +591,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.UserIDMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("userId")+") = ?")
 		values = append(values, f.UserIDMin)
@@ -619,6 +669,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.UserIDMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("userId")+") IN (?)")
 		values = append(values, f.UserIDMaxIn)
+	}
+
+	if f.UserIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("userId")+") NOT IN (?)")
+		values = append(values, f.UserIDMinNotIn)
+	}
+
+	if f.UserIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("userId")+") NOT IN (?)")
+		values = append(values, f.UserIDMaxNotIn)
 	}
 
 	if f.BalanceMin != nil {
@@ -726,6 +786,21 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.BalanceAvgIn)
 	}
 
+	if f.BalanceMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceMinNotIn)
+	}
+
+	if f.BalanceMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceMaxNotIn)
+	}
+
+	if f.BalanceAvgNotIn != nil {
+		conditions = append(conditions, "Avg("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceAvgNotIn)
+	}
+
 	if f.WalletTypeIDMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("walletTypeId")+") = ?")
 		values = append(values, f.WalletTypeIDMin)
@@ -794,6 +869,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.WalletTypeIDMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("walletTypeId")+") IN (?)")
 		values = append(values, f.WalletTypeIDMaxIn)
+	}
+
+	if f.WalletTypeIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("walletTypeId")+") NOT IN (?)")
+		values = append(values, f.WalletTypeIDMinNotIn)
+	}
+
+	if f.WalletTypeIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("walletTypeId")+") NOT IN (?)")
+		values = append(values, f.WalletTypeIDMaxNotIn)
 	}
 
 	if f.UpdatedAtMin != nil {
@@ -866,6 +951,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.UpdatedAtMaxIn)
 	}
 
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
+	}
+
 	if f.CreatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") = ?")
 		values = append(values, f.CreatedAtMin)
@@ -934,6 +1029,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.CreatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") IN (?)")
 		values = append(values, f.CreatedAtMaxIn)
+	}
+
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
 	}
 
 	if f.UpdatedByMin != nil {
@@ -1006,6 +1111,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -1074,6 +1189,16 @@ func (f *WalletFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -1249,6 +1374,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -1290,6 +1420,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 	if f.NameIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" IN (?)")
 		values = append(values, f.NameIn)
+	}
+
+	if f.NameNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" NOT IN (?)")
+		values = append(values, f.NameNotIn)
 	}
 
 	if f.NameLike != nil {
@@ -1350,6 +1485,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 		values = append(values, f.DescriptionIn)
 	}
 
+	if f.DescriptionNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" NOT IN (?)")
+		values = append(values, f.DescriptionNotIn)
+	}
+
 	if f.DescriptionLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionLike, "?", "_", -1), "*", "%", -1))
@@ -1408,6 +1548,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 		values = append(values, f.WalletIDIn)
 	}
 
+	if f.WalletIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" NOT IN (?)")
+		values = append(values, f.WalletIDNotIn)
+	}
+
 	if f.WalletIDNull != nil {
 		if *f.WalletIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" IS NULL")
@@ -1449,6 +1594,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -1494,6 +1644,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -1537,6 +1692,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -1578,6 +1738,11 @@ func (f *WalletTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix st
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -1666,6 +1831,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.NameMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") = ?")
 		values = append(values, f.NameMin)
@@ -1734,6 +1909,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 	if f.NameMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") IN (?)")
 		values = append(values, f.NameMaxIn)
+	}
+
+	if f.NameMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMinNotIn)
+	}
+
+	if f.NameMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMaxNotIn)
 	}
 
 	if f.NameMinLike != nil {
@@ -1836,6 +2021,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.DescriptionMaxIn)
 	}
 
+	if f.DescriptionMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMinNotIn)
+	}
+
+	if f.DescriptionMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMaxNotIn)
+	}
+
 	if f.DescriptionMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionMinLike, "?", "_", -1), "*", "%", -1))
@@ -1936,6 +2131,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.WalletIDMaxIn)
 	}
 
+	if f.WalletIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMinNotIn)
+	}
+
+	if f.WalletIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -2004,6 +2209,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -2076,6 +2291,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -2146,6 +2371,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -2214,6 +2449,16 @@ func (f *WalletTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix s
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -2389,6 +2634,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -2430,6 +2680,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 	if f.NameIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" IN (?)")
 		values = append(values, f.NameIn)
+	}
+
+	if f.NameNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" NOT IN (?)")
+		values = append(values, f.NameNotIn)
 	}
 
 	if f.NameLike != nil {
@@ -2490,6 +2745,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 		values = append(values, f.DescriptionIn)
 	}
 
+	if f.DescriptionNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" NOT IN (?)")
+		values = append(values, f.DescriptionNotIn)
+	}
+
 	if f.DescriptionLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionLike, "?", "_", -1), "*", "%", -1))
@@ -2548,6 +2808,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 		values = append(values, f.AccountProviderIDIn)
 	}
 
+	if f.AccountProviderIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderId")+" NOT IN (?)")
+		values = append(values, f.AccountProviderIDNotIn)
+	}
+
 	if f.AccountProviderIDNull != nil {
 		if *f.AccountProviderIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderId")+" IS NULL")
@@ -2589,6 +2854,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -2634,6 +2904,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -2677,6 +2952,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -2718,6 +2998,11 @@ func (f *AccountProviderTypeFilterType) WhereContent(dialect gorm.Dialect, alias
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -2806,6 +3091,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.NameMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") = ?")
 		values = append(values, f.NameMin)
@@ -2874,6 +3169,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 	if f.NameMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") IN (?)")
 		values = append(values, f.NameMaxIn)
+	}
+
+	if f.NameMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMinNotIn)
+	}
+
+	if f.NameMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMaxNotIn)
 	}
 
 	if f.NameMinLike != nil {
@@ -2976,6 +3281,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 		values = append(values, f.DescriptionMaxIn)
 	}
 
+	if f.DescriptionMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMinNotIn)
+	}
+
+	if f.DescriptionMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMaxNotIn)
+	}
+
 	if f.DescriptionMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionMinLike, "?", "_", -1), "*", "%", -1))
@@ -3076,6 +3391,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 		values = append(values, f.AccountProviderIDMaxIn)
 	}
 
+	if f.AccountProviderIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountProviderId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderIDMinNotIn)
+	}
+
+	if f.AccountProviderIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountProviderId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -3144,6 +3469,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -3216,6 +3551,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -3286,6 +3631,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -3354,6 +3709,16 @@ func (f *AccountProviderTypeFilterType) HavingContent(dialect gorm.Dialect, alia
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -3538,6 +3903,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -3579,6 +3949,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 	if f.NameIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" IN (?)")
 		values = append(values, f.NameIn)
+	}
+
+	if f.NameNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" NOT IN (?)")
+		values = append(values, f.NameNotIn)
 	}
 
 	if f.NameLike != nil {
@@ -3639,6 +4014,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.DescriptionIn)
 	}
 
+	if f.DescriptionNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" NOT IN (?)")
+		values = append(values, f.DescriptionNotIn)
+	}
+
 	if f.DescriptionLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionLike, "?", "_", -1), "*", "%", -1))
@@ -3695,6 +4075,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 	if f.AddressIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("address")+" IN (?)")
 		values = append(values, f.AddressIn)
+	}
+
+	if f.AddressNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("address")+" NOT IN (?)")
+		values = append(values, f.AddressNotIn)
 	}
 
 	if f.AddressLike != nil {
@@ -3755,6 +4140,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.PhoneIn)
 	}
 
+	if f.PhoneNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("phone")+" NOT IN (?)")
+		values = append(values, f.PhoneNotIn)
+	}
+
 	if f.PhoneLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("phone")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.PhoneLike, "?", "_", -1), "*", "%", -1))
@@ -3813,6 +4203,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.AccountProviderTypeIDIn)
 	}
 
+	if f.AccountProviderTypeIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderTypeId")+" NOT IN (?)")
+		values = append(values, f.AccountProviderTypeIDNotIn)
+	}
+
 	if f.AccountProviderTypeIDNull != nil {
 		if *f.AccountProviderTypeIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderTypeId")+" IS NULL")
@@ -3854,6 +4249,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -3899,6 +4299,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -3942,6 +4347,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -3983,6 +4393,11 @@ func (f *AccountProviderFilterType) WhereContent(dialect gorm.Dialect, aliasPref
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -4071,6 +4486,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.NameMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") = ?")
 		values = append(values, f.NameMin)
@@ -4139,6 +4564,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 	if f.NameMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") IN (?)")
 		values = append(values, f.NameMaxIn)
+	}
+
+	if f.NameMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMinNotIn)
+	}
+
+	if f.NameMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMaxNotIn)
 	}
 
 	if f.NameMinLike != nil {
@@ -4241,6 +4676,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.DescriptionMaxIn)
 	}
 
+	if f.DescriptionMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMinNotIn)
+	}
+
+	if f.DescriptionMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMaxNotIn)
+	}
+
 	if f.DescriptionMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionMinLike, "?", "_", -1), "*", "%", -1))
@@ -4339,6 +4784,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 	if f.AddressMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("address")+") IN (?)")
 		values = append(values, f.AddressMaxIn)
+	}
+
+	if f.AddressMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("address")+") NOT IN (?)")
+		values = append(values, f.AddressMinNotIn)
+	}
+
+	if f.AddressMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("address")+") NOT IN (?)")
+		values = append(values, f.AddressMaxNotIn)
 	}
 
 	if f.AddressMinLike != nil {
@@ -4441,6 +4896,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.PhoneMaxIn)
 	}
 
+	if f.PhoneMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("phone")+") NOT IN (?)")
+		values = append(values, f.PhoneMinNotIn)
+	}
+
+	if f.PhoneMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("phone")+") NOT IN (?)")
+		values = append(values, f.PhoneMaxNotIn)
+	}
+
 	if f.PhoneMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("phone")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.PhoneMinLike, "?", "_", -1), "*", "%", -1))
@@ -4541,6 +5006,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.AccountProviderTypeIDMaxIn)
 	}
 
+	if f.AccountProviderTypeIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountProviderTypeId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderTypeIDMinNotIn)
+	}
+
+	if f.AccountProviderTypeIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountProviderTypeId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderTypeIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -4609,6 +5084,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -4681,6 +5166,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -4751,6 +5246,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -4819,6 +5324,16 @@ func (f *AccountProviderFilterType) HavingContent(dialect gorm.Dialect, aliasPre
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -5012,6 +5527,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -5053,6 +5573,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.AccountNumberIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("accountNumber")+" IN (?)")
 		values = append(values, f.AccountNumberIn)
+	}
+
+	if f.AccountNumberNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("accountNumber")+" NOT IN (?)")
+		values = append(values, f.AccountNumberNotIn)
 	}
 
 	if f.AccountNumberLike != nil {
@@ -5113,6 +5638,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.BalanceIn)
 	}
 
+	if f.BalanceNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("balance")+" NOT IN (?)")
+		values = append(values, f.BalanceNotIn)
+	}
+
 	if f.BalanceNull != nil {
 		if *f.BalanceNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("balance")+" IS NULL")
@@ -5154,6 +5684,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.AccountProviderIDIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderId")+" IN (?)")
 		values = append(values, f.AccountProviderIDIn)
+	}
+
+	if f.AccountProviderIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("accountProviderId")+" NOT IN (?)")
+		values = append(values, f.AccountProviderIDNotIn)
 	}
 
 	if f.AccountProviderIDNull != nil {
@@ -5199,6 +5734,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.WalletIDIn)
 	}
 
+	if f.WalletIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" NOT IN (?)")
+		values = append(values, f.WalletIDNotIn)
+	}
+
 	if f.WalletIDNull != nil {
 		if *f.WalletIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" IS NULL")
@@ -5240,6 +5780,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -5285,6 +5830,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -5328,6 +5878,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -5369,6 +5924,11 @@ func (f *AccountFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -5457,6 +6017,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.AccountNumberMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountNumber")+") = ?")
 		values = append(values, f.AccountNumberMin)
@@ -5525,6 +6095,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.AccountNumberMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountNumber")+") IN (?)")
 		values = append(values, f.AccountNumberMaxIn)
+	}
+
+	if f.AccountNumberMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountNumber")+") NOT IN (?)")
+		values = append(values, f.AccountNumberMinNotIn)
+	}
+
+	if f.AccountNumberMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountNumber")+") NOT IN (?)")
+		values = append(values, f.AccountNumberMaxNotIn)
 	}
 
 	if f.AccountNumberMinLike != nil {
@@ -5662,6 +6242,21 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.BalanceAvgIn)
 	}
 
+	if f.BalanceMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceMinNotIn)
+	}
+
+	if f.BalanceMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceMaxNotIn)
+	}
+
+	if f.BalanceAvgNotIn != nil {
+		conditions = append(conditions, "Avg("+aliasPrefix+dialect.Quote("balance")+") NOT IN (?)")
+		values = append(values, f.BalanceAvgNotIn)
+	}
+
 	if f.AccountProviderIDMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountProviderId")+") = ?")
 		values = append(values, f.AccountProviderIDMin)
@@ -5730,6 +6325,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.AccountProviderIDMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountProviderId")+") IN (?)")
 		values = append(values, f.AccountProviderIDMaxIn)
+	}
+
+	if f.AccountProviderIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountProviderId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderIDMinNotIn)
+	}
+
+	if f.AccountProviderIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountProviderId")+") NOT IN (?)")
+		values = append(values, f.AccountProviderIDMaxNotIn)
 	}
 
 	if f.WalletIDMin != nil {
@@ -5802,6 +6407,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.WalletIDMaxIn)
 	}
 
+	if f.WalletIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMinNotIn)
+	}
+
+	if f.WalletIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -5870,6 +6485,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -5942,6 +6567,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -6012,6 +6647,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -6080,6 +6725,16 @@ func (f *AccountFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -6255,6 +6910,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -6296,6 +6956,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 	if f.NameIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" IN (?)")
 		values = append(values, f.NameIn)
+	}
+
+	if f.NameNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" NOT IN (?)")
+		values = append(values, f.NameNotIn)
 	}
 
 	if f.NameLike != nil {
@@ -6356,6 +7021,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 		values = append(values, f.DescriptionIn)
 	}
 
+	if f.DescriptionNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" NOT IN (?)")
+		values = append(values, f.DescriptionNotIn)
+	}
+
 	if f.DescriptionLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionLike, "?", "_", -1), "*", "%", -1))
@@ -6414,6 +7084,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 		values = append(values, f.PaymentIDIn)
 	}
 
+	if f.PaymentIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentId")+" NOT IN (?)")
+		values = append(values, f.PaymentIDNotIn)
+	}
+
 	if f.PaymentIDNull != nil {
 		if *f.PaymentIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("paymentId")+" IS NULL")
@@ -6455,6 +7130,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -6500,6 +7180,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -6543,6 +7228,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -6584,6 +7274,11 @@ func (f *PaymentChannelFilterType) WhereContent(dialect gorm.Dialect, aliasPrefi
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -6672,6 +7367,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.NameMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") = ?")
 		values = append(values, f.NameMin)
@@ -6740,6 +7445,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 	if f.NameMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") IN (?)")
 		values = append(values, f.NameMaxIn)
+	}
+
+	if f.NameMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMinNotIn)
+	}
+
+	if f.NameMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMaxNotIn)
 	}
 
 	if f.NameMinLike != nil {
@@ -6842,6 +7557,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.DescriptionMaxIn)
 	}
 
+	if f.DescriptionMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMinNotIn)
+	}
+
+	if f.DescriptionMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMaxNotIn)
+	}
+
 	if f.DescriptionMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionMinLike, "?", "_", -1), "*", "%", -1))
@@ -6942,6 +7667,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.PaymentIDMaxIn)
 	}
 
+	if f.PaymentIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentId")+") NOT IN (?)")
+		values = append(values, f.PaymentIDMinNotIn)
+	}
+
+	if f.PaymentIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentId")+") NOT IN (?)")
+		values = append(values, f.PaymentIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -7010,6 +7745,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -7082,6 +7827,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -7152,6 +7907,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -7220,6 +7985,16 @@ func (f *PaymentChannelFilterType) HavingContent(dialect gorm.Dialect, aliasPref
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -7395,6 +8170,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -7436,6 +8216,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 	if f.NameIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" IN (?)")
 		values = append(values, f.NameIn)
+	}
+
+	if f.NameNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("name")+" NOT IN (?)")
+		values = append(values, f.NameNotIn)
 	}
 
 	if f.NameLike != nil {
@@ -7496,6 +8281,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.DescriptionIn)
 	}
 
+	if f.DescriptionNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" NOT IN (?)")
+		values = append(values, f.DescriptionNotIn)
+	}
+
 	if f.DescriptionLike != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("description")+" LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionLike, "?", "_", -1), "*", "%", -1))
@@ -7554,6 +8344,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.PaymentIDIn)
 	}
 
+	if f.PaymentIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentId")+" NOT IN (?)")
+		values = append(values, f.PaymentIDNotIn)
+	}
+
 	if f.PaymentIDNull != nil {
 		if *f.PaymentIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("paymentId")+" IS NULL")
@@ -7595,6 +8390,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 	if f.UpdatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IN (?)")
 		values = append(values, f.UpdatedAtIn)
+	}
+
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
 	}
 
 	if f.UpdatedAtNull != nil {
@@ -7640,6 +8440,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.CreatedAtIn)
 	}
 
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
+	}
+
 	if f.CreatedAtNull != nil {
 		if *f.CreatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IS NULL")
@@ -7683,6 +8488,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -7724,6 +8534,11 @@ func (f *PaymentTypeFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix s
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -7812,6 +8627,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.NameMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") = ?")
 		values = append(values, f.NameMin)
@@ -7880,6 +8705,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 	if f.NameMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") IN (?)")
 		values = append(values, f.NameMaxIn)
+	}
+
+	if f.NameMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMinNotIn)
+	}
+
+	if f.NameMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("name")+") NOT IN (?)")
+		values = append(values, f.NameMaxNotIn)
 	}
 
 	if f.NameMinLike != nil {
@@ -7982,6 +8817,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 		values = append(values, f.DescriptionMaxIn)
 	}
 
+	if f.DescriptionMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMinNotIn)
+	}
+
+	if f.DescriptionMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("description")+") NOT IN (?)")
+		values = append(values, f.DescriptionMaxNotIn)
+	}
+
 	if f.DescriptionMinLike != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("description")+") LIKE ?")
 		values = append(values, strings.Replace(strings.Replace(*f.DescriptionMinLike, "?", "_", -1), "*", "%", -1))
@@ -8082,6 +8927,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 		values = append(values, f.PaymentIDMaxIn)
 	}
 
+	if f.PaymentIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentId")+") NOT IN (?)")
+		values = append(values, f.PaymentIDMinNotIn)
+	}
+
+	if f.PaymentIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentId")+") NOT IN (?)")
+		values = append(values, f.PaymentIDMaxNotIn)
+	}
+
 	if f.UpdatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") = ?")
 		values = append(values, f.UpdatedAtMin)
@@ -8150,6 +9005,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 	if f.UpdatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") IN (?)")
 		values = append(values, f.UpdatedAtMaxIn)
+	}
+
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
 	}
 
 	if f.CreatedAtMin != nil {
@@ -8222,6 +9087,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 		values = append(values, f.CreatedAtMaxIn)
 	}
 
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
+	}
+
 	if f.UpdatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") = ?")
 		values = append(values, f.UpdatedByMin)
@@ -8292,6 +9167,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -8360,6 +9245,16 @@ func (f *PaymentTypeFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix 
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return
@@ -8562,6 +9457,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.IDIn)
 	}
 
+	if f.IDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" NOT IN (?)")
+		values = append(values, f.IDNotIn)
+	}
+
 	if f.IDNull != nil {
 		if *f.IDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("id")+" IS NULL")
@@ -8603,6 +9503,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.PaymentRefIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentRef")+" IN (?)")
 		values = append(values, f.PaymentRefIn)
+	}
+
+	if f.PaymentRefNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentRef")+" NOT IN (?)")
+		values = append(values, f.PaymentRefNotIn)
 	}
 
 	if f.PaymentRefLike != nil {
@@ -8663,6 +9568,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.AmountIn)
 	}
 
+	if f.AmountNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("amount")+" NOT IN (?)")
+		values = append(values, f.AmountNotIn)
+	}
+
 	if f.AmountNull != nil {
 		if *f.AmountNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("amount")+" IS NULL")
@@ -8704,6 +9614,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.ConceptIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("concept")+" IN (?)")
 		values = append(values, f.ConceptIn)
+	}
+
+	if f.ConceptNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("concept")+" NOT IN (?)")
+		values = append(values, f.ConceptNotIn)
 	}
 
 	if f.ConceptLike != nil {
@@ -8764,6 +9679,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.WalletIDIn)
 	}
 
+	if f.WalletIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" NOT IN (?)")
+		values = append(values, f.WalletIDNotIn)
+	}
+
 	if f.WalletIDNull != nil {
 		if *f.WalletIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("walletId")+" IS NULL")
@@ -8805,6 +9725,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.AccountIDIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("accountId")+" IN (?)")
 		values = append(values, f.AccountIDIn)
+	}
+
+	if f.AccountIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("accountId")+" NOT IN (?)")
+		values = append(values, f.AccountIDNotIn)
 	}
 
 	if f.AccountIDNull != nil {
@@ -8850,6 +9775,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.PaymentChannelIDIn)
 	}
 
+	if f.PaymentChannelIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentChannelId")+" NOT IN (?)")
+		values = append(values, f.PaymentChannelIDNotIn)
+	}
+
 	if f.PaymentChannelIDNull != nil {
 		if *f.PaymentChannelIDNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("paymentChannelId")+" IS NULL")
@@ -8891,6 +9821,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.PaymentTypeIDIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentTypeId")+" IN (?)")
 		values = append(values, f.PaymentTypeIDIn)
+	}
+
+	if f.PaymentTypeIDNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("paymentTypeId")+" NOT IN (?)")
+		values = append(values, f.PaymentTypeIDNotIn)
 	}
 
 	if f.PaymentTypeIDNull != nil {
@@ -8936,6 +9871,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.UpdatedAtIn)
 	}
 
+	if f.UpdatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" NOT IN (?)")
+		values = append(values, f.UpdatedAtNotIn)
+	}
+
 	if f.UpdatedAtNull != nil {
 		if *f.UpdatedAtNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedAt")+" IS NULL")
@@ -8977,6 +9917,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.CreatedAtIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" IN (?)")
 		values = append(values, f.CreatedAtIn)
+	}
+
+	if f.CreatedAtNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdAt")+" NOT IN (?)")
+		values = append(values, f.CreatedAtNotIn)
 	}
 
 	if f.CreatedAtNull != nil {
@@ -9022,6 +9967,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 		values = append(values, f.UpdatedByIn)
 	}
 
+	if f.UpdatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" NOT IN (?)")
+		values = append(values, f.UpdatedByNotIn)
+	}
+
 	if f.UpdatedByNull != nil {
 		if *f.UpdatedByNull {
 			conditions = append(conditions, aliasPrefix+dialect.Quote("updatedBy")+" IS NULL")
@@ -9063,6 +10013,11 @@ func (f *PaymentFilterType) WhereContent(dialect gorm.Dialect, aliasPrefix strin
 	if f.CreatedByIn != nil {
 		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" IN (?)")
 		values = append(values, f.CreatedByIn)
+	}
+
+	if f.CreatedByNotIn != nil {
+		conditions = append(conditions, aliasPrefix+dialect.Quote("createdBy")+" NOT IN (?)")
+		values = append(values, f.CreatedByNotIn)
 	}
 
 	if f.CreatedByNull != nil {
@@ -9151,6 +10106,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.IDMaxIn)
 	}
 
+	if f.IDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMinNotIn)
+	}
+
+	if f.IDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("id")+") NOT IN (?)")
+		values = append(values, f.IDMaxNotIn)
+	}
+
 	if f.PaymentRefMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentRef")+") = ?")
 		values = append(values, f.PaymentRefMin)
@@ -9219,6 +10184,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.PaymentRefMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentRef")+") IN (?)")
 		values = append(values, f.PaymentRefMaxIn)
+	}
+
+	if f.PaymentRefMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentRef")+") NOT IN (?)")
+		values = append(values, f.PaymentRefMinNotIn)
+	}
+
+	if f.PaymentRefMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentRef")+") NOT IN (?)")
+		values = append(values, f.PaymentRefMaxNotIn)
 	}
 
 	if f.PaymentRefMinLike != nil {
@@ -9356,6 +10331,21 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.AmountAvgIn)
 	}
 
+	if f.AmountMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("amount")+") NOT IN (?)")
+		values = append(values, f.AmountMinNotIn)
+	}
+
+	if f.AmountMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("amount")+") NOT IN (?)")
+		values = append(values, f.AmountMaxNotIn)
+	}
+
+	if f.AmountAvgNotIn != nil {
+		conditions = append(conditions, "Avg("+aliasPrefix+dialect.Quote("amount")+") NOT IN (?)")
+		values = append(values, f.AmountAvgNotIn)
+	}
+
 	if f.ConceptMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("concept")+") = ?")
 		values = append(values, f.ConceptMin)
@@ -9424,6 +10414,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.ConceptMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("concept")+") IN (?)")
 		values = append(values, f.ConceptMaxIn)
+	}
+
+	if f.ConceptMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("concept")+") NOT IN (?)")
+		values = append(values, f.ConceptMinNotIn)
+	}
+
+	if f.ConceptMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("concept")+") NOT IN (?)")
+		values = append(values, f.ConceptMaxNotIn)
 	}
 
 	if f.ConceptMinLike != nil {
@@ -9526,6 +10526,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.WalletIDMaxIn)
 	}
 
+	if f.WalletIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMinNotIn)
+	}
+
+	if f.WalletIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("walletId")+") NOT IN (?)")
+		values = append(values, f.WalletIDMaxNotIn)
+	}
+
 	if f.AccountIDMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountId")+") = ?")
 		values = append(values, f.AccountIDMin)
@@ -9594,6 +10604,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.AccountIDMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountId")+") IN (?)")
 		values = append(values, f.AccountIDMaxIn)
+	}
+
+	if f.AccountIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("accountId")+") NOT IN (?)")
+		values = append(values, f.AccountIDMinNotIn)
+	}
+
+	if f.AccountIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("accountId")+") NOT IN (?)")
+		values = append(values, f.AccountIDMaxNotIn)
 	}
 
 	if f.PaymentChannelIDMin != nil {
@@ -9666,6 +10686,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.PaymentChannelIDMaxIn)
 	}
 
+	if f.PaymentChannelIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentChannelId")+") NOT IN (?)")
+		values = append(values, f.PaymentChannelIDMinNotIn)
+	}
+
+	if f.PaymentChannelIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentChannelId")+") NOT IN (?)")
+		values = append(values, f.PaymentChannelIDMaxNotIn)
+	}
+
 	if f.PaymentTypeIDMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentTypeId")+") = ?")
 		values = append(values, f.PaymentTypeIDMin)
@@ -9734,6 +10764,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.PaymentTypeIDMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentTypeId")+") IN (?)")
 		values = append(values, f.PaymentTypeIDMaxIn)
+	}
+
+	if f.PaymentTypeIDMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("paymentTypeId")+") NOT IN (?)")
+		values = append(values, f.PaymentTypeIDMinNotIn)
+	}
+
+	if f.PaymentTypeIDMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("paymentTypeId")+") NOT IN (?)")
+		values = append(values, f.PaymentTypeIDMaxNotIn)
 	}
 
 	if f.UpdatedAtMin != nil {
@@ -9806,6 +10846,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.UpdatedAtMaxIn)
 	}
 
+	if f.UpdatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMinNotIn)
+	}
+
+	if f.UpdatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedAt")+") NOT IN (?)")
+		values = append(values, f.UpdatedAtMaxNotIn)
+	}
+
 	if f.CreatedAtMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") = ?")
 		values = append(values, f.CreatedAtMin)
@@ -9874,6 +10924,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.CreatedAtMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") IN (?)")
 		values = append(values, f.CreatedAtMaxIn)
+	}
+
+	if f.CreatedAtMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMinNotIn)
+	}
+
+	if f.CreatedAtMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdAt")+") NOT IN (?)")
+		values = append(values, f.CreatedAtMaxNotIn)
 	}
 
 	if f.UpdatedByMin != nil {
@@ -9946,6 +11006,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 		values = append(values, f.UpdatedByMaxIn)
 	}
 
+	if f.UpdatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMinNotIn)
+	}
+
+	if f.UpdatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("updatedBy")+") NOT IN (?)")
+		values = append(values, f.UpdatedByMaxNotIn)
+	}
+
 	if f.CreatedByMin != nil {
 		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") = ?")
 		values = append(values, f.CreatedByMin)
@@ -10014,6 +11084,16 @@ func (f *PaymentFilterType) HavingContent(dialect gorm.Dialect, aliasPrefix stri
 	if f.CreatedByMaxIn != nil {
 		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") IN (?)")
 		values = append(values, f.CreatedByMaxIn)
+	}
+
+	if f.CreatedByMinNotIn != nil {
+		conditions = append(conditions, "Min("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMinNotIn)
+	}
+
+	if f.CreatedByMaxNotIn != nil {
+		conditions = append(conditions, "Max("+aliasPrefix+dialect.Quote("createdBy")+") NOT IN (?)")
+		values = append(values, f.CreatedByMaxNotIn)
 	}
 
 	return

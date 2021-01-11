@@ -2099,6 +2099,9 @@ input WalletFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   userId: ID
   userIdMin: ID
@@ -2121,6 +2124,9 @@ input WalletFilterType {
   userId_in: [ID!]
   userIdMin_in: [ID!]
   userIdMax_in: [ID!]
+  userId_not_in: [ID!]
+  userIdMin_not_in: [ID!]
+  userIdMax_not_in: [ID!]
   userId_null: Boolean
   balance: Float
   balanceMin: Float
@@ -2150,6 +2156,10 @@ input WalletFilterType {
   balanceMin_in: [Float!]
   balanceMax_in: [Float!]
   balanceAvg_in: [Float!]
+  balance_not_in: [Float!]
+  balanceMin_not_in: [Float!]
+  balanceMax_not_in: [Float!]
+  balanceAvg_not_in: [Float!]
   balance_null: Boolean
   walletTypeId: ID
   walletTypeIdMin: ID
@@ -2172,6 +2182,9 @@ input WalletFilterType {
   walletTypeId_in: [ID!]
   walletTypeIdMin_in: [ID!]
   walletTypeIdMax_in: [ID!]
+  walletTypeId_not_in: [ID!]
+  walletTypeIdMin_not_in: [ID!]
+  walletTypeIdMax_not_in: [ID!]
   walletTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -2194,6 +2207,9 @@ input WalletFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -2216,6 +2232,9 @@ input WalletFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -2238,6 +2257,9 @@ input WalletFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -2260,6 +2282,9 @@ input WalletFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   walletType: WalletTypeFilterType
   accounts: AccountFilterType
@@ -2336,6 +2361,9 @@ input WalletTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -2358,6 +2386,9 @@ input WalletTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -2389,6 +2420,9 @@ input WalletTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -2420,6 +2454,9 @@ input WalletTypeFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -2442,6 +2479,9 @@ input WalletTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -2464,6 +2504,9 @@ input WalletTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -2486,6 +2529,9 @@ input WalletTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -2508,6 +2554,9 @@ input WalletTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   wallet: WalletFilterType
 }
@@ -2582,6 +2631,9 @@ input AccountProviderTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -2604,6 +2656,9 @@ input AccountProviderTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -2635,6 +2690,9 @@ input AccountProviderTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -2666,6 +2724,9 @@ input AccountProviderTypeFilterType {
   accountProviderId_in: [ID!]
   accountProviderIdMin_in: [ID!]
   accountProviderIdMax_in: [ID!]
+  accountProviderId_not_in: [ID!]
+  accountProviderIdMin_not_in: [ID!]
+  accountProviderIdMax_not_in: [ID!]
   accountProviderId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -2688,6 +2749,9 @@ input AccountProviderTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -2710,6 +2774,9 @@ input AccountProviderTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -2732,6 +2799,9 @@ input AccountProviderTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -2754,6 +2824,9 @@ input AccountProviderTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accountProvider: AccountProviderFilterType
 }
@@ -2844,6 +2917,9 @@ input AccountProviderFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -2866,6 +2942,9 @@ input AccountProviderFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -2897,6 +2976,9 @@ input AccountProviderFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -2928,6 +3010,9 @@ input AccountProviderFilterType {
   address_in: [String!]
   addressMin_in: [String!]
   addressMax_in: [String!]
+  address_not_in: [String!]
+  addressMin_not_in: [String!]
+  addressMax_not_in: [String!]
   address_like: String
   addressMin_like: String
   addressMax_like: String
@@ -2959,6 +3044,9 @@ input AccountProviderFilterType {
   phone_in: [String!]
   phoneMin_in: [String!]
   phoneMax_in: [String!]
+  phone_not_in: [String!]
+  phoneMin_not_in: [String!]
+  phoneMax_not_in: [String!]
   phone_like: String
   phoneMin_like: String
   phoneMax_like: String
@@ -2990,6 +3078,9 @@ input AccountProviderFilterType {
   accountProviderTypeId_in: [ID!]
   accountProviderTypeIdMin_in: [ID!]
   accountProviderTypeIdMax_in: [ID!]
+  accountProviderTypeId_not_in: [ID!]
+  accountProviderTypeIdMin_not_in: [ID!]
+  accountProviderTypeIdMax_not_in: [ID!]
   accountProviderTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -3012,6 +3103,9 @@ input AccountProviderFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -3034,6 +3128,9 @@ input AccountProviderFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -3056,6 +3153,9 @@ input AccountProviderFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -3078,6 +3178,9 @@ input AccountProviderFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accounts: AccountFilterType
   accountProviderType: AccountProviderTypeFilterType
@@ -3166,6 +3269,9 @@ input AccountFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   accountNumber: String
   accountNumberMin: String
@@ -3188,6 +3294,9 @@ input AccountFilterType {
   accountNumber_in: [String!]
   accountNumberMin_in: [String!]
   accountNumberMax_in: [String!]
+  accountNumber_not_in: [String!]
+  accountNumberMin_not_in: [String!]
+  accountNumberMax_not_in: [String!]
   accountNumber_like: String
   accountNumberMin_like: String
   accountNumberMax_like: String
@@ -3226,6 +3335,10 @@ input AccountFilterType {
   balanceMin_in: [Float!]
   balanceMax_in: [Float!]
   balanceAvg_in: [Float!]
+  balance_not_in: [Float!]
+  balanceMin_not_in: [Float!]
+  balanceMax_not_in: [Float!]
+  balanceAvg_not_in: [Float!]
   balance_null: Boolean
   accountProviderId: ID
   accountProviderIdMin: ID
@@ -3248,6 +3361,9 @@ input AccountFilterType {
   accountProviderId_in: [ID!]
   accountProviderIdMin_in: [ID!]
   accountProviderIdMax_in: [ID!]
+  accountProviderId_not_in: [ID!]
+  accountProviderIdMin_not_in: [ID!]
+  accountProviderIdMax_not_in: [ID!]
   accountProviderId_null: Boolean
   walletId: ID
   walletIdMin: ID
@@ -3270,6 +3386,9 @@ input AccountFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -3292,6 +3411,9 @@ input AccountFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -3314,6 +3436,9 @@ input AccountFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -3336,6 +3461,9 @@ input AccountFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -3358,6 +3486,9 @@ input AccountFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accountProvider: AccountProviderFilterType
   wallet: WalletFilterType
@@ -3434,6 +3565,9 @@ input PaymentChannelFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -3456,6 +3590,9 @@ input PaymentChannelFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -3487,6 +3624,9 @@ input PaymentChannelFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -3518,6 +3658,9 @@ input PaymentChannelFilterType {
   paymentId_in: [ID!]
   paymentIdMin_in: [ID!]
   paymentIdMax_in: [ID!]
+  paymentId_not_in: [ID!]
+  paymentIdMin_not_in: [ID!]
+  paymentIdMax_not_in: [ID!]
   paymentId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -3540,6 +3683,9 @@ input PaymentChannelFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -3562,6 +3708,9 @@ input PaymentChannelFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -3584,6 +3733,9 @@ input PaymentChannelFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -3606,6 +3758,9 @@ input PaymentChannelFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   payment: PaymentFilterType
 }
@@ -3680,6 +3835,9 @@ input PaymentTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -3702,6 +3860,9 @@ input PaymentTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -3733,6 +3894,9 @@ input PaymentTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -3764,6 +3928,9 @@ input PaymentTypeFilterType {
   paymentId_in: [ID!]
   paymentIdMin_in: [ID!]
   paymentIdMax_in: [ID!]
+  paymentId_not_in: [ID!]
+  paymentIdMin_not_in: [ID!]
+  paymentIdMax_not_in: [ID!]
   paymentId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -3786,6 +3953,9 @@ input PaymentTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -3808,6 +3978,9 @@ input PaymentTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -3830,6 +4003,9 @@ input PaymentTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -3852,6 +4028,9 @@ input PaymentTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   payment: PaymentFilterType
 }
@@ -3950,6 +4129,9 @@ input PaymentFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   paymentRef: String
   paymentRefMin: String
@@ -3972,6 +4154,9 @@ input PaymentFilterType {
   paymentRef_in: [String!]
   paymentRefMin_in: [String!]
   paymentRefMax_in: [String!]
+  paymentRef_not_in: [String!]
+  paymentRefMin_not_in: [String!]
+  paymentRefMax_not_in: [String!]
   paymentRef_like: String
   paymentRefMin_like: String
   paymentRefMax_like: String
@@ -4010,6 +4195,10 @@ input PaymentFilterType {
   amountMin_in: [Float!]
   amountMax_in: [Float!]
   amountAvg_in: [Float!]
+  amount_not_in: [Float!]
+  amountMin_not_in: [Float!]
+  amountMax_not_in: [Float!]
+  amountAvg_not_in: [Float!]
   amount_null: Boolean
   concept: String
   conceptMin: String
@@ -4032,6 +4221,9 @@ input PaymentFilterType {
   concept_in: [String!]
   conceptMin_in: [String!]
   conceptMax_in: [String!]
+  concept_not_in: [String!]
+  conceptMin_not_in: [String!]
+  conceptMax_not_in: [String!]
   concept_like: String
   conceptMin_like: String
   conceptMax_like: String
@@ -4063,6 +4255,9 @@ input PaymentFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   accountId: ID
   accountIdMin: ID
@@ -4085,6 +4280,9 @@ input PaymentFilterType {
   accountId_in: [ID!]
   accountIdMin_in: [ID!]
   accountIdMax_in: [ID!]
+  accountId_not_in: [ID!]
+  accountIdMin_not_in: [ID!]
+  accountIdMax_not_in: [ID!]
   accountId_null: Boolean
   paymentChannelId: ID
   paymentChannelIdMin: ID
@@ -4107,6 +4305,9 @@ input PaymentFilterType {
   paymentChannelId_in: [ID!]
   paymentChannelIdMin_in: [ID!]
   paymentChannelIdMax_in: [ID!]
+  paymentChannelId_not_in: [ID!]
+  paymentChannelIdMin_not_in: [ID!]
+  paymentChannelIdMax_not_in: [ID!]
   paymentChannelId_null: Boolean
   paymentTypeId: ID
   paymentTypeIdMin: ID
@@ -4129,6 +4330,9 @@ input PaymentFilterType {
   paymentTypeId_in: [ID!]
   paymentTypeIdMin_in: [ID!]
   paymentTypeIdMax_in: [ID!]
+  paymentTypeId_not_in: [ID!]
+  paymentTypeIdMin_not_in: [ID!]
+  paymentTypeIdMax_not_in: [ID!]
   paymentTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -4151,6 +4355,9 @@ input PaymentFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -4173,6 +4380,9 @@ input PaymentFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -4195,6 +4405,9 @@ input PaymentFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -4217,6 +4430,9 @@ input PaymentFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   wallet: WalletFilterType
   account: AccountFilterType
@@ -12722,6 +12938,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -12895,6 +13135,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountNumberMax_in"))
 			it.AccountNumberMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountNumber_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountNumber_not_in"))
+			it.AccountNumberNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountNumberMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountNumberMin_not_in"))
+			it.AccountNumberMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountNumberMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountNumberMax_not_in"))
+			it.AccountNumberMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -13202,6 +13466,38 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "balance_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balance_not_in"))
+			it.BalanceNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceMin_not_in"))
+			it.BalanceMinNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceMax_not_in"))
+			it.BalanceMaxNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceAvg_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceAvg_not_in"))
+			it.BalanceAvgNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "balance_null":
 			var err error
 
@@ -13375,6 +13671,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderIdMax_in"))
 			it.AccountProviderIDMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderId_not_in"))
+			it.AccountProviderIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderIdMin_not_in"))
+			it.AccountProviderIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderIdMax_not_in"))
+			it.AccountProviderIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -13554,6 +13874,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "walletId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletId_not_in"))
+			it.WalletIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMin_not_in"))
+			it.WalletIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMax_not_in"))
+			it.WalletIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "walletId_null":
 			var err error
 
@@ -13727,6 +14071,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -13906,6 +14274,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -14082,6 +14474,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -14255,6 +14671,30 @@ func (ec *executionContext) unmarshalInputAccountFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -14486,6 +14926,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -14659,6 +15123,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_in"))
 			it.NameMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "name_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name_not_in"))
+			it.NameNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMin_not_in"))
+			it.NameMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_not_in"))
+			it.NameMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -14910,6 +15398,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "description_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("description_not_in"))
+			it.DescriptionNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMin_not_in"))
+			it.DescriptionMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMax_not_in"))
+			it.DescriptionMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "description_like":
 			var err error
 
@@ -15155,6 +15667,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("addressMax_in"))
 			it.AddressMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "address_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("address_not_in"))
+			it.AddressNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "addressMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("addressMin_not_in"))
+			it.AddressMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "addressMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("addressMax_not_in"))
+			it.AddressMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -15406,6 +15942,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "phone_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("phone_not_in"))
+			it.PhoneNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "phoneMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("phoneMin_not_in"))
+			it.PhoneMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "phoneMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("phoneMax_not_in"))
+			it.PhoneMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "phone_like":
 			var err error
 
@@ -15654,6 +16214,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "accountProviderTypeId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderTypeId_not_in"))
+			it.AccountProviderTypeIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderTypeIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderTypeIdMin_not_in"))
+			it.AccountProviderTypeIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderTypeIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderTypeIdMax_not_in"))
+			it.AccountProviderTypeIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "accountProviderTypeId_null":
 			var err error
 
@@ -15827,6 +16411,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -16006,6 +16614,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -16182,6 +16814,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -16355,6 +17011,30 @@ func (ec *executionContext) unmarshalInputAccountProviderFilterType(ctx context.
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -16870,6 +17550,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -17043,6 +17747,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_in"))
 			it.NameMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "name_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name_not_in"))
+			it.NameNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMin_not_in"))
+			it.NameMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_not_in"))
+			it.NameMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -17294,6 +18022,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 			if err != nil {
 				return it, err
 			}
+		case "description_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("description_not_in"))
+			it.DescriptionNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMin_not_in"))
+			it.DescriptionMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMax_not_in"))
+			it.DescriptionMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "description_like":
 			var err error
 
@@ -17542,6 +18294,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 			if err != nil {
 				return it, err
 			}
+		case "accountProviderId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderId_not_in"))
+			it.AccountProviderIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderIdMin_not_in"))
+			it.AccountProviderIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountProviderIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountProviderIdMax_not_in"))
+			it.AccountProviderIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "accountProviderId_null":
 			var err error
 
@@ -17715,6 +18491,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -17894,6 +18694,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -18070,6 +18894,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -18243,6 +19091,30 @@ func (ec *executionContext) unmarshalInputAccountProviderTypeFilterType(ctx cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -18954,6 +19826,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -19127,6 +20023,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_in"))
 			it.NameMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "name_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name_not_in"))
+			it.NameNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMin_not_in"))
+			it.NameMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_not_in"))
+			it.NameMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -19378,6 +20298,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 			if err != nil {
 				return it, err
 			}
+		case "description_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("description_not_in"))
+			it.DescriptionNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMin_not_in"))
+			it.DescriptionMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMax_not_in"))
+			it.DescriptionMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "description_like":
 			var err error
 
@@ -19626,6 +20570,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 			if err != nil {
 				return it, err
 			}
+		case "paymentId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentId_not_in"))
+			it.PaymentIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentIdMin_not_in"))
+			it.PaymentIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentIdMax_not_in"))
+			it.PaymentIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "paymentId_null":
 			var err error
 
@@ -19799,6 +20767,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -19978,6 +20970,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -20154,6 +21170,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -20327,6 +21367,30 @@ func (ec *executionContext) unmarshalInputPaymentChannelFilterType(ctx context.C
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -20754,6 +21818,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -20927,6 +22015,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentRefMax_in"))
 			it.PaymentRefMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentRef_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentRef_not_in"))
+			it.PaymentRefNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentRefMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentRefMin_not_in"))
+			it.PaymentRefMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentRefMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentRefMax_not_in"))
+			it.PaymentRefMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -21234,6 +22346,38 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "amount_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("amount_not_in"))
+			it.AmountNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "amountMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("amountMin_not_in"))
+			it.AmountMinNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "amountMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("amountMax_not_in"))
+			it.AmountMaxNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "amountAvg_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("amountAvg_not_in"))
+			it.AmountAvgNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "amount_null":
 			var err error
 
@@ -21407,6 +22551,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("conceptMax_in"))
 			it.ConceptMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "concept_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("concept_not_in"))
+			it.ConceptNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "conceptMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("conceptMin_not_in"))
+			it.ConceptMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "conceptMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("conceptMax_not_in"))
+			it.ConceptMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -21658,6 +22826,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "walletId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletId_not_in"))
+			it.WalletIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMin_not_in"))
+			it.WalletIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMax_not_in"))
+			it.WalletIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "walletId_null":
 			var err error
 
@@ -21831,6 +23023,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountIdMax_in"))
 			it.AccountIDMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountId_not_in"))
+			it.AccountIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountIdMin_not_in"))
+			it.AccountIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "accountIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("accountIdMax_not_in"))
+			it.AccountIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -22010,6 +23226,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "paymentChannelId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentChannelId_not_in"))
+			it.PaymentChannelIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentChannelIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentChannelIdMin_not_in"))
+			it.PaymentChannelIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentChannelIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentChannelIdMax_not_in"))
+			it.PaymentChannelIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "paymentChannelId_null":
 			var err error
 
@@ -22183,6 +23423,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentTypeIdMax_in"))
 			it.PaymentTypeIDMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentTypeId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentTypeId_not_in"))
+			it.PaymentTypeIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentTypeIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentTypeIdMin_not_in"))
+			it.PaymentTypeIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentTypeIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentTypeIdMax_not_in"))
+			it.PaymentTypeIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -22362,6 +23626,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedAt_null":
 			var err error
 
@@ -22535,6 +23823,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_in"))
 			it.CreatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -22714,6 +24026,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -22887,6 +24223,30 @@ func (ec *executionContext) unmarshalInputPaymentFilterType(ctx context.Context,
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -23466,6 +24826,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -23639,6 +25023,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_in"))
 			it.NameMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "name_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name_not_in"))
+			it.NameNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMin_not_in"))
+			it.NameMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_not_in"))
+			it.NameMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -23890,6 +25298,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 			if err != nil {
 				return it, err
 			}
+		case "description_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("description_not_in"))
+			it.DescriptionNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMin_not_in"))
+			it.DescriptionMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMax_not_in"))
+			it.DescriptionMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "description_like":
 			var err error
 
@@ -24138,6 +25570,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 			if err != nil {
 				return it, err
 			}
+		case "paymentId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentId_not_in"))
+			it.PaymentIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentIdMin_not_in"))
+			it.PaymentIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "paymentIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("paymentIdMax_not_in"))
+			it.PaymentIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "paymentId_null":
 			var err error
 
@@ -24311,6 +25767,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -24490,6 +25970,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -24666,6 +26170,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -24839,6 +26367,30 @@ func (ec *executionContext) unmarshalInputPaymentTypeFilterType(ctx context.Cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25266,6 +26818,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -25439,6 +27015,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userIdMax_in"))
 			it.UserIDMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "userId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userId_not_in"))
+			it.UserIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "userIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userIdMin_not_in"))
+			it.UserIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "userIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("userIdMax_not_in"))
+			it.UserIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -25674,6 +27274,38 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 			if err != nil {
 				return it, err
 			}
+		case "balance_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balance_not_in"))
+			it.BalanceNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceMin_not_in"))
+			it.BalanceMinNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceMax_not_in"))
+			it.BalanceMaxNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "balanceAvg_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("balanceAvg_not_in"))
+			it.BalanceAvgNotIn, err = ec.unmarshalOFloat2ᚕfloat64ᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "balance_null":
 			var err error
 
@@ -25847,6 +27479,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletTypeIdMax_in"))
 			it.WalletTypeIDMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletTypeId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletTypeId_not_in"))
+			it.WalletTypeIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletTypeIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletTypeIdMin_not_in"))
+			it.WalletTypeIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletTypeIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletTypeIdMax_not_in"))
+			it.WalletTypeIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -26026,6 +27682,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 			if err != nil {
 				return it, err
 			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedAt_null":
 			var err error
 
@@ -26199,6 +27879,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_in"))
 			it.CreatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -26378,6 +28082,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -26551,6 +28279,30 @@ func (ec *executionContext) unmarshalInputWalletFilterType(ctx context.Context, 
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -27066,6 +28818,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
+		case "id_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("id_not_in"))
+			it.IDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMin_not_in"))
+			it.IDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "idMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("idMax_not_in"))
+			it.IDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "id_null":
 			var err error
 
@@ -27239,6 +29015,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_in"))
 			it.NameMaxIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "name_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("name_not_in"))
+			it.NameNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMin_not_in"))
+			it.NameMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "nameMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("nameMax_not_in"))
+			it.NameMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -27490,6 +29290,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
+		case "description_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("description_not_in"))
+			it.DescriptionNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMin_not_in"))
+			it.DescriptionMinNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "descriptionMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("descriptionMax_not_in"))
+			it.DescriptionMaxNotIn, err = ec.unmarshalOString2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "description_like":
 			var err error
 
@@ -27738,6 +29562,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
+		case "walletId_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletId_not_in"))
+			it.WalletIDNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMin_not_in"))
+			it.WalletIDMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "walletIdMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("walletIdMax_not_in"))
+			it.WalletIDMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "walletId_null":
 			var err error
 
@@ -27911,6 +29759,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_in"))
 			it.UpdatedAtMaxIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAt_not_in"))
+			it.UpdatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMin_not_in"))
+			it.UpdatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedAtMax_not_in"))
+			it.UpdatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -28090,6 +29962,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
+		case "createdAt_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAt_not_in"))
+			it.CreatedAtNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMin_not_in"))
+			it.CreatedAtMinNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdAtMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdAtMax_not_in"))
+			it.CreatedAtMaxNotIn, err = ec.unmarshalOTime2ᚕᚖtimeᚐTimeᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "createdAt_null":
 			var err error
 
@@ -28266,6 +30162,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 			if err != nil {
 				return it, err
 			}
+		case "updatedBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedBy_not_in"))
+			it.UpdatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMin_not_in"))
+			it.UpdatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "updatedByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("updatedByMax_not_in"))
+			it.UpdatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
 		case "updatedBy_null":
 			var err error
 
@@ -28439,6 +30359,30 @@ func (ec *executionContext) unmarshalInputWalletTypeFilterType(ctx context.Conte
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_in"))
 			it.CreatedByMaxIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdBy_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdBy_not_in"))
+			it.CreatedByNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMin_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMin_not_in"))
+			it.CreatedByMinNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "createdByMax_not_in":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("createdByMax_not_in"))
+			it.CreatedByMaxNotIn, err = ec.unmarshalOID2ᚕstringᚄ(ctx, v)
 			if err != nil {
 				return it, err
 			}

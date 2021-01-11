@@ -3,6 +3,7 @@ package gen
 import (
 	"context"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/gofrs/uuid"
@@ -19,7 +20,7 @@ type MutationEvents struct {
 
 // EnrichContextWithMutations method
 func EnrichContextWithMutations(ctx context.Context, r *GeneratedResolver) context.Context {
-	_ctx := context.WithValue(ctx, KeyMutationTransaction, r.DB.db.Begin())
+	_ctx := context.WithValue(ctx, KeyMutationTransaction, r.GetDB(ctx).Begin())
 	_ctx = context.WithValue(_ctx, KeyMutationEvents, &MutationEvents{})
 	return _ctx
 }
@@ -302,6 +303,10 @@ func (r *GeneratedMutationResolver) DeleteAllWallets(ctx context.Context) (bool,
 
 // DeleteAllWalletsHandler handler
 func DeleteAllWalletsHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&Wallet{}).Error
 	if err != nil {
@@ -519,6 +524,10 @@ func (r *GeneratedMutationResolver) DeleteAllWalletTypes(ctx context.Context) (b
 
 // DeleteAllWalletTypesHandler handler
 func DeleteAllWalletTypesHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&WalletType{}).Error
 	if err != nil {
@@ -736,6 +745,10 @@ func (r *GeneratedMutationResolver) DeleteAllAccountProviderTypes(ctx context.Co
 
 // DeleteAllAccountProviderTypesHandler handler
 func DeleteAllAccountProviderTypesHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&AccountProviderType{}).Error
 	if err != nil {
@@ -991,6 +1004,10 @@ func (r *GeneratedMutationResolver) DeleteAllAccountProviders(ctx context.Contex
 
 // DeleteAllAccountProvidersHandler handler
 func DeleteAllAccountProvidersHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&AccountProvider{}).Error
 	if err != nil {
@@ -1234,6 +1251,10 @@ func (r *GeneratedMutationResolver) DeleteAllAccounts(ctx context.Context) (bool
 
 // DeleteAllAccountsHandler handler
 func DeleteAllAccountsHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&Account{}).Error
 	if err != nil {
@@ -1451,6 +1472,10 @@ func (r *GeneratedMutationResolver) DeleteAllPaymentChannels(ctx context.Context
 
 // DeleteAllPaymentChannelsHandler handler
 func DeleteAllPaymentChannelsHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&PaymentChannel{}).Error
 	if err != nil {
@@ -1668,6 +1693,10 @@ func (r *GeneratedMutationResolver) DeleteAllPaymentTypes(ctx context.Context) (
 
 // DeleteAllPaymentTypesHandler handler
 func DeleteAllPaymentTypesHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&PaymentType{}).Error
 	if err != nil {
@@ -1933,6 +1962,10 @@ func (r *GeneratedMutationResolver) DeleteAllPayments(ctx context.Context) (bool
 
 // DeleteAllPaymentsHandler handler
 func DeleteAllPaymentsHandler(ctx context.Context, r *GeneratedResolver) (bool, error) {
+	// delete all resolvers are primarily used for
+	if os.Getenv("ENABLE_DELETE_ALL_RESOLVERS") == "" {
+		return false, fmt.Errorf("delete all resolver is not enabled (ENABLE_DELETE_ALL_RESOLVERS not specified)")
+	}
 	tx := r.GetDB(ctx)
 	err := tx.Delete(&Payment{}).Error
 	if err != nil {

@@ -268,6 +268,9 @@ input WalletFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   userId: ID
   userIdMin: ID
@@ -290,6 +293,9 @@ input WalletFilterType {
   userId_in: [ID!]
   userIdMin_in: [ID!]
   userIdMax_in: [ID!]
+  userId_not_in: [ID!]
+  userIdMin_not_in: [ID!]
+  userIdMax_not_in: [ID!]
   userId_null: Boolean
   balance: Float
   balanceMin: Float
@@ -319,6 +325,10 @@ input WalletFilterType {
   balanceMin_in: [Float!]
   balanceMax_in: [Float!]
   balanceAvg_in: [Float!]
+  balance_not_in: [Float!]
+  balanceMin_not_in: [Float!]
+  balanceMax_not_in: [Float!]
+  balanceAvg_not_in: [Float!]
   balance_null: Boolean
   walletTypeId: ID
   walletTypeIdMin: ID
@@ -341,6 +351,9 @@ input WalletFilterType {
   walletTypeId_in: [ID!]
   walletTypeIdMin_in: [ID!]
   walletTypeIdMax_in: [ID!]
+  walletTypeId_not_in: [ID!]
+  walletTypeIdMin_not_in: [ID!]
+  walletTypeIdMax_not_in: [ID!]
   walletTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -363,6 +376,9 @@ input WalletFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -385,6 +401,9 @@ input WalletFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -407,6 +426,9 @@ input WalletFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -429,6 +451,9 @@ input WalletFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   walletType: WalletTypeFilterType
   accounts: AccountFilterType
@@ -505,6 +530,9 @@ input WalletTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -527,6 +555,9 @@ input WalletTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -558,6 +589,9 @@ input WalletTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -589,6 +623,9 @@ input WalletTypeFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -611,6 +648,9 @@ input WalletTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -633,6 +673,9 @@ input WalletTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -655,6 +698,9 @@ input WalletTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -677,6 +723,9 @@ input WalletTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   wallet: WalletFilterType
 }
@@ -751,6 +800,9 @@ input AccountProviderTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -773,6 +825,9 @@ input AccountProviderTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -804,6 +859,9 @@ input AccountProviderTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -835,6 +893,9 @@ input AccountProviderTypeFilterType {
   accountProviderId_in: [ID!]
   accountProviderIdMin_in: [ID!]
   accountProviderIdMax_in: [ID!]
+  accountProviderId_not_in: [ID!]
+  accountProviderIdMin_not_in: [ID!]
+  accountProviderIdMax_not_in: [ID!]
   accountProviderId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -857,6 +918,9 @@ input AccountProviderTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -879,6 +943,9 @@ input AccountProviderTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -901,6 +968,9 @@ input AccountProviderTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -923,6 +993,9 @@ input AccountProviderTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accountProvider: AccountProviderFilterType
 }
@@ -1013,6 +1086,9 @@ input AccountProviderFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -1035,6 +1111,9 @@ input AccountProviderFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -1066,6 +1145,9 @@ input AccountProviderFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -1097,6 +1179,9 @@ input AccountProviderFilterType {
   address_in: [String!]
   addressMin_in: [String!]
   addressMax_in: [String!]
+  address_not_in: [String!]
+  addressMin_not_in: [String!]
+  addressMax_not_in: [String!]
   address_like: String
   addressMin_like: String
   addressMax_like: String
@@ -1128,6 +1213,9 @@ input AccountProviderFilterType {
   phone_in: [String!]
   phoneMin_in: [String!]
   phoneMax_in: [String!]
+  phone_not_in: [String!]
+  phoneMin_not_in: [String!]
+  phoneMax_not_in: [String!]
   phone_like: String
   phoneMin_like: String
   phoneMax_like: String
@@ -1159,6 +1247,9 @@ input AccountProviderFilterType {
   accountProviderTypeId_in: [ID!]
   accountProviderTypeIdMin_in: [ID!]
   accountProviderTypeIdMax_in: [ID!]
+  accountProviderTypeId_not_in: [ID!]
+  accountProviderTypeIdMin_not_in: [ID!]
+  accountProviderTypeIdMax_not_in: [ID!]
   accountProviderTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -1181,6 +1272,9 @@ input AccountProviderFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -1203,6 +1297,9 @@ input AccountProviderFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -1225,6 +1322,9 @@ input AccountProviderFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -1247,6 +1347,9 @@ input AccountProviderFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accounts: AccountFilterType
   accountProviderType: AccountProviderTypeFilterType
@@ -1335,6 +1438,9 @@ input AccountFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   accountNumber: String
   accountNumberMin: String
@@ -1357,6 +1463,9 @@ input AccountFilterType {
   accountNumber_in: [String!]
   accountNumberMin_in: [String!]
   accountNumberMax_in: [String!]
+  accountNumber_not_in: [String!]
+  accountNumberMin_not_in: [String!]
+  accountNumberMax_not_in: [String!]
   accountNumber_like: String
   accountNumberMin_like: String
   accountNumberMax_like: String
@@ -1395,6 +1504,10 @@ input AccountFilterType {
   balanceMin_in: [Float!]
   balanceMax_in: [Float!]
   balanceAvg_in: [Float!]
+  balance_not_in: [Float!]
+  balanceMin_not_in: [Float!]
+  balanceMax_not_in: [Float!]
+  balanceAvg_not_in: [Float!]
   balance_null: Boolean
   accountProviderId: ID
   accountProviderIdMin: ID
@@ -1417,6 +1530,9 @@ input AccountFilterType {
   accountProviderId_in: [ID!]
   accountProviderIdMin_in: [ID!]
   accountProviderIdMax_in: [ID!]
+  accountProviderId_not_in: [ID!]
+  accountProviderIdMin_not_in: [ID!]
+  accountProviderIdMax_not_in: [ID!]
   accountProviderId_null: Boolean
   walletId: ID
   walletIdMin: ID
@@ -1439,6 +1555,9 @@ input AccountFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -1461,6 +1580,9 @@ input AccountFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -1483,6 +1605,9 @@ input AccountFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -1505,6 +1630,9 @@ input AccountFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -1527,6 +1655,9 @@ input AccountFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   accountProvider: AccountProviderFilterType
   wallet: WalletFilterType
@@ -1603,6 +1734,9 @@ input PaymentChannelFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -1625,6 +1759,9 @@ input PaymentChannelFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -1656,6 +1793,9 @@ input PaymentChannelFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -1687,6 +1827,9 @@ input PaymentChannelFilterType {
   paymentId_in: [ID!]
   paymentIdMin_in: [ID!]
   paymentIdMax_in: [ID!]
+  paymentId_not_in: [ID!]
+  paymentIdMin_not_in: [ID!]
+  paymentIdMax_not_in: [ID!]
   paymentId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -1709,6 +1852,9 @@ input PaymentChannelFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -1731,6 +1877,9 @@ input PaymentChannelFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -1753,6 +1902,9 @@ input PaymentChannelFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -1775,6 +1927,9 @@ input PaymentChannelFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   payment: PaymentFilterType
 }
@@ -1849,6 +2004,9 @@ input PaymentTypeFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   name: String
   nameMin: String
@@ -1871,6 +2029,9 @@ input PaymentTypeFilterType {
   name_in: [String!]
   nameMin_in: [String!]
   nameMax_in: [String!]
+  name_not_in: [String!]
+  nameMin_not_in: [String!]
+  nameMax_not_in: [String!]
   name_like: String
   nameMin_like: String
   nameMax_like: String
@@ -1902,6 +2063,9 @@ input PaymentTypeFilterType {
   description_in: [String!]
   descriptionMin_in: [String!]
   descriptionMax_in: [String!]
+  description_not_in: [String!]
+  descriptionMin_not_in: [String!]
+  descriptionMax_not_in: [String!]
   description_like: String
   descriptionMin_like: String
   descriptionMax_like: String
@@ -1933,6 +2097,9 @@ input PaymentTypeFilterType {
   paymentId_in: [ID!]
   paymentIdMin_in: [ID!]
   paymentIdMax_in: [ID!]
+  paymentId_not_in: [ID!]
+  paymentIdMin_not_in: [ID!]
+  paymentIdMax_not_in: [ID!]
   paymentId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -1955,6 +2122,9 @@ input PaymentTypeFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -1977,6 +2147,9 @@ input PaymentTypeFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -1999,6 +2172,9 @@ input PaymentTypeFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -2021,6 +2197,9 @@ input PaymentTypeFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   payment: PaymentFilterType
 }
@@ -2119,6 +2298,9 @@ input PaymentFilterType {
   id_in: [ID!]
   idMin_in: [ID!]
   idMax_in: [ID!]
+  id_not_in: [ID!]
+  idMin_not_in: [ID!]
+  idMax_not_in: [ID!]
   id_null: Boolean
   paymentRef: String
   paymentRefMin: String
@@ -2141,6 +2323,9 @@ input PaymentFilterType {
   paymentRef_in: [String!]
   paymentRefMin_in: [String!]
   paymentRefMax_in: [String!]
+  paymentRef_not_in: [String!]
+  paymentRefMin_not_in: [String!]
+  paymentRefMax_not_in: [String!]
   paymentRef_like: String
   paymentRefMin_like: String
   paymentRefMax_like: String
@@ -2179,6 +2364,10 @@ input PaymentFilterType {
   amountMin_in: [Float!]
   amountMax_in: [Float!]
   amountAvg_in: [Float!]
+  amount_not_in: [Float!]
+  amountMin_not_in: [Float!]
+  amountMax_not_in: [Float!]
+  amountAvg_not_in: [Float!]
   amount_null: Boolean
   concept: String
   conceptMin: String
@@ -2201,6 +2390,9 @@ input PaymentFilterType {
   concept_in: [String!]
   conceptMin_in: [String!]
   conceptMax_in: [String!]
+  concept_not_in: [String!]
+  conceptMin_not_in: [String!]
+  conceptMax_not_in: [String!]
   concept_like: String
   conceptMin_like: String
   conceptMax_like: String
@@ -2232,6 +2424,9 @@ input PaymentFilterType {
   walletId_in: [ID!]
   walletIdMin_in: [ID!]
   walletIdMax_in: [ID!]
+  walletId_not_in: [ID!]
+  walletIdMin_not_in: [ID!]
+  walletIdMax_not_in: [ID!]
   walletId_null: Boolean
   accountId: ID
   accountIdMin: ID
@@ -2254,6 +2449,9 @@ input PaymentFilterType {
   accountId_in: [ID!]
   accountIdMin_in: [ID!]
   accountIdMax_in: [ID!]
+  accountId_not_in: [ID!]
+  accountIdMin_not_in: [ID!]
+  accountIdMax_not_in: [ID!]
   accountId_null: Boolean
   paymentChannelId: ID
   paymentChannelIdMin: ID
@@ -2276,6 +2474,9 @@ input PaymentFilterType {
   paymentChannelId_in: [ID!]
   paymentChannelIdMin_in: [ID!]
   paymentChannelIdMax_in: [ID!]
+  paymentChannelId_not_in: [ID!]
+  paymentChannelIdMin_not_in: [ID!]
+  paymentChannelIdMax_not_in: [ID!]
   paymentChannelId_null: Boolean
   paymentTypeId: ID
   paymentTypeIdMin: ID
@@ -2298,6 +2499,9 @@ input PaymentFilterType {
   paymentTypeId_in: [ID!]
   paymentTypeIdMin_in: [ID!]
   paymentTypeIdMax_in: [ID!]
+  paymentTypeId_not_in: [ID!]
+  paymentTypeIdMin_not_in: [ID!]
+  paymentTypeIdMax_not_in: [ID!]
   paymentTypeId_null: Boolean
   updatedAt: Time
   updatedAtMin: Time
@@ -2320,6 +2524,9 @@ input PaymentFilterType {
   updatedAt_in: [Time!]
   updatedAtMin_in: [Time!]
   updatedAtMax_in: [Time!]
+  updatedAt_not_in: [Time!]
+  updatedAtMin_not_in: [Time!]
+  updatedAtMax_not_in: [Time!]
   updatedAt_null: Boolean
   createdAt: Time
   createdAtMin: Time
@@ -2342,6 +2549,9 @@ input PaymentFilterType {
   createdAt_in: [Time!]
   createdAtMin_in: [Time!]
   createdAtMax_in: [Time!]
+  createdAt_not_in: [Time!]
+  createdAtMin_not_in: [Time!]
+  createdAtMax_not_in: [Time!]
   createdAt_null: Boolean
   updatedBy: ID
   updatedByMin: ID
@@ -2364,6 +2574,9 @@ input PaymentFilterType {
   updatedBy_in: [ID!]
   updatedByMin_in: [ID!]
   updatedByMax_in: [ID!]
+  updatedBy_not_in: [ID!]
+  updatedByMin_not_in: [ID!]
+  updatedByMax_not_in: [ID!]
   updatedBy_null: Boolean
   createdBy: ID
   createdByMin: ID
@@ -2386,6 +2599,9 @@ input PaymentFilterType {
   createdBy_in: [ID!]
   createdByMin_in: [ID!]
   createdByMax_in: [ID!]
+  createdBy_not_in: [ID!]
+  createdByMin_not_in: [ID!]
+  createdByMax_not_in: [ID!]
   createdBy_null: Boolean
   wallet: WalletFilterType
   account: AccountFilterType

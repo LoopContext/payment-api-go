@@ -50,9 +50,6 @@ func QueryWalletHandler(ctx context.Context, r *GeneratedResolver, opts QueryWal
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("wallets")+".id = ?", *opts.ID)
 	}
@@ -81,7 +78,7 @@ type QueryWalletsHandlerOptions struct {
 	Filter *WalletFilterType
 }
 
-// Wallets ...
+// Wallets handler options
 func (r *GeneratedQueryResolver) Wallets(ctx context.Context, offset *int, limit *int, q *string, sort []*WalletSortType, filter *WalletFilterType) (*WalletResultType, error) {
 	opts := QueryWalletsHandlerOptions{
 		Offset: offset,
@@ -91,6 +88,32 @@ func (r *GeneratedQueryResolver) Wallets(ctx context.Context, offset *int, limit
 		Filter: filter,
 	}
 	return r.Handlers.QueryWallets(ctx, r.GeneratedResolver, opts)
+}
+
+// WalletsItems handler
+func (r *GeneratedResolver) WalletsItems(ctx context.Context, opts QueryWalletsHandlerOptions) (res []*Wallet, err error) {
+	resultType, err := r.Handlers.QueryWallets(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("wallets"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// WalletsCount handler
+func (r *GeneratedResolver) WalletsCount(ctx context.Context, opts QueryWalletsHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryWallets(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("wallets"),
+	}, &Wallet{})
 }
 
 // QueryWalletsHandler handler
@@ -130,7 +153,7 @@ func (r *GeneratedWalletResultTypeResolver) Items(ctx context.Context, obj *Wall
 		Alias:      TableName("wallets"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*Wallet{}
 	idMap := map[string]bool{}
@@ -150,7 +173,7 @@ func (r *GeneratedWalletResultTypeResolver) Count(ctx context.Context, obj *Wall
 		Alias:      TableName("wallets"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &Wallet{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &Wallet{})
 }
 
 // GeneratedWalletResolver struct
@@ -188,9 +211,6 @@ func WalletAccountsHandler(ctx context.Context, r *GeneratedResolver, obj *Walle
 
 	items := []*Account{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Related(&items, "Accounts").Error
 	res = items
 
@@ -203,9 +223,6 @@ func (r *GeneratedWalletResolver) AccountsIds(ctx context.Context, obj *Wallet) 
 
 	items := []*Account{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Select(TableName("accounts")+".id").Related(&items, "Accounts").Error
 
 	for _, item := range items {
@@ -252,9 +269,6 @@ func WalletPaymentsHandler(ctx context.Context, r *GeneratedResolver, obj *Walle
 
 	items := []*Payment{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Related(&items, "Payments").Error
 	res = items
 
@@ -267,9 +281,6 @@ func (r *GeneratedWalletResolver) PaymentsIds(ctx context.Context, obj *Wallet) 
 
 	items := []*Payment{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Select(TableName("payments")+".id").Related(&items, "Payments").Error
 
 	for _, item := range items {
@@ -344,9 +355,6 @@ func QueryWalletTypeHandler(ctx context.Context, r *GeneratedResolver, opts Quer
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("wallet_types")+".id = ?", *opts.ID)
 	}
@@ -375,7 +383,7 @@ type QueryWalletTypesHandlerOptions struct {
 	Filter *WalletTypeFilterType
 }
 
-// WalletTypes ...
+// WalletTypes handler options
 func (r *GeneratedQueryResolver) WalletTypes(ctx context.Context, offset *int, limit *int, q *string, sort []*WalletTypeSortType, filter *WalletTypeFilterType) (*WalletTypeResultType, error) {
 	opts := QueryWalletTypesHandlerOptions{
 		Offset: offset,
@@ -385,6 +393,32 @@ func (r *GeneratedQueryResolver) WalletTypes(ctx context.Context, offset *int, l
 		Filter: filter,
 	}
 	return r.Handlers.QueryWalletTypes(ctx, r.GeneratedResolver, opts)
+}
+
+// WalletTypesItems handler
+func (r *GeneratedResolver) WalletTypesItems(ctx context.Context, opts QueryWalletTypesHandlerOptions) (res []*WalletType, err error) {
+	resultType, err := r.Handlers.QueryWalletTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("wallet_types"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// WalletTypesCount handler
+func (r *GeneratedResolver) WalletTypesCount(ctx context.Context, opts QueryWalletTypesHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryWalletTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("wallet_types"),
+	}, &WalletType{})
 }
 
 // QueryWalletTypesHandler handler
@@ -424,7 +458,7 @@ func (r *GeneratedWalletTypeResultTypeResolver) Items(ctx context.Context, obj *
 		Alias:      TableName("wallet_types"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*WalletType{}
 	idMap := map[string]bool{}
@@ -444,7 +478,7 @@ func (r *GeneratedWalletTypeResultTypeResolver) Count(ctx context.Context, obj *
 		Alias:      TableName("wallet_types"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &WalletType{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &WalletType{})
 }
 
 // GeneratedWalletTypeResolver struct
@@ -507,9 +541,6 @@ func QueryAccountProviderTypeHandler(ctx context.Context, r *GeneratedResolver, 
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("account_provider_types")+".id = ?", *opts.ID)
 	}
@@ -538,7 +569,7 @@ type QueryAccountProviderTypesHandlerOptions struct {
 	Filter *AccountProviderTypeFilterType
 }
 
-// AccountProviderTypes ...
+// AccountProviderTypes handler options
 func (r *GeneratedQueryResolver) AccountProviderTypes(ctx context.Context, offset *int, limit *int, q *string, sort []*AccountProviderTypeSortType, filter *AccountProviderTypeFilterType) (*AccountProviderTypeResultType, error) {
 	opts := QueryAccountProviderTypesHandlerOptions{
 		Offset: offset,
@@ -548,6 +579,32 @@ func (r *GeneratedQueryResolver) AccountProviderTypes(ctx context.Context, offse
 		Filter: filter,
 	}
 	return r.Handlers.QueryAccountProviderTypes(ctx, r.GeneratedResolver, opts)
+}
+
+// AccountProviderTypesItems handler
+func (r *GeneratedResolver) AccountProviderTypesItems(ctx context.Context, opts QueryAccountProviderTypesHandlerOptions) (res []*AccountProviderType, err error) {
+	resultType, err := r.Handlers.QueryAccountProviderTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("account_provider_types"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// AccountProviderTypesCount handler
+func (r *GeneratedResolver) AccountProviderTypesCount(ctx context.Context, opts QueryAccountProviderTypesHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryAccountProviderTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("account_provider_types"),
+	}, &AccountProviderType{})
 }
 
 // QueryAccountProviderTypesHandler handler
@@ -587,7 +644,7 @@ func (r *GeneratedAccountProviderTypeResultTypeResolver) Items(ctx context.Conte
 		Alias:      TableName("account_provider_types"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*AccountProviderType{}
 	idMap := map[string]bool{}
@@ -607,7 +664,7 @@ func (r *GeneratedAccountProviderTypeResultTypeResolver) Count(ctx context.Conte
 		Alias:      TableName("account_provider_types"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &AccountProviderType{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &AccountProviderType{})
 }
 
 // GeneratedAccountProviderTypeResolver struct
@@ -670,9 +727,6 @@ func QueryAccountProviderHandler(ctx context.Context, r *GeneratedResolver, opts
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("account_providers")+".id = ?", *opts.ID)
 	}
@@ -701,7 +755,7 @@ type QueryAccountProvidersHandlerOptions struct {
 	Filter *AccountProviderFilterType
 }
 
-// AccountProviders ...
+// AccountProviders handler options
 func (r *GeneratedQueryResolver) AccountProviders(ctx context.Context, offset *int, limit *int, q *string, sort []*AccountProviderSortType, filter *AccountProviderFilterType) (*AccountProviderResultType, error) {
 	opts := QueryAccountProvidersHandlerOptions{
 		Offset: offset,
@@ -711,6 +765,32 @@ func (r *GeneratedQueryResolver) AccountProviders(ctx context.Context, offset *i
 		Filter: filter,
 	}
 	return r.Handlers.QueryAccountProviders(ctx, r.GeneratedResolver, opts)
+}
+
+// AccountProvidersItems handler
+func (r *GeneratedResolver) AccountProvidersItems(ctx context.Context, opts QueryAccountProvidersHandlerOptions) (res []*AccountProvider, err error) {
+	resultType, err := r.Handlers.QueryAccountProviders(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("account_providers"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// AccountProvidersCount handler
+func (r *GeneratedResolver) AccountProvidersCount(ctx context.Context, opts QueryAccountProvidersHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryAccountProviders(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("account_providers"),
+	}, &AccountProvider{})
 }
 
 // QueryAccountProvidersHandler handler
@@ -750,7 +830,7 @@ func (r *GeneratedAccountProviderResultTypeResolver) Items(ctx context.Context, 
 		Alias:      TableName("account_providers"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*AccountProvider{}
 	idMap := map[string]bool{}
@@ -770,7 +850,7 @@ func (r *GeneratedAccountProviderResultTypeResolver) Count(ctx context.Context, 
 		Alias:      TableName("account_providers"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &AccountProvider{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &AccountProvider{})
 }
 
 // GeneratedAccountProviderResolver struct
@@ -786,9 +866,6 @@ func AccountProviderAccountsHandler(ctx context.Context, r *GeneratedResolver, o
 
 	items := []*Account{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Related(&items, "Accounts").Error
 	res = items
 
@@ -801,9 +878,6 @@ func (r *GeneratedAccountProviderResolver) AccountsIds(ctx context.Context, obj 
 
 	items := []*Account{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Select(TableName("accounts")+".id").Related(&items, "Accounts").Error
 
 	for _, item := range items {
@@ -900,9 +974,6 @@ func QueryAccountHandler(ctx context.Context, r *GeneratedResolver, opts QueryAc
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("accounts")+".id = ?", *opts.ID)
 	}
@@ -931,7 +1002,7 @@ type QueryAccountsHandlerOptions struct {
 	Filter *AccountFilterType
 }
 
-// Accounts ...
+// Accounts handler options
 func (r *GeneratedQueryResolver) Accounts(ctx context.Context, offset *int, limit *int, q *string, sort []*AccountSortType, filter *AccountFilterType) (*AccountResultType, error) {
 	opts := QueryAccountsHandlerOptions{
 		Offset: offset,
@@ -941,6 +1012,32 @@ func (r *GeneratedQueryResolver) Accounts(ctx context.Context, offset *int, limi
 		Filter: filter,
 	}
 	return r.Handlers.QueryAccounts(ctx, r.GeneratedResolver, opts)
+}
+
+// AccountsItems handler
+func (r *GeneratedResolver) AccountsItems(ctx context.Context, opts QueryAccountsHandlerOptions) (res []*Account, err error) {
+	resultType, err := r.Handlers.QueryAccounts(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("accounts"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// AccountsCount handler
+func (r *GeneratedResolver) AccountsCount(ctx context.Context, opts QueryAccountsHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryAccounts(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("accounts"),
+	}, &Account{})
 }
 
 // QueryAccountsHandler handler
@@ -980,7 +1077,7 @@ func (r *GeneratedAccountResultTypeResolver) Items(ctx context.Context, obj *Acc
 		Alias:      TableName("accounts"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*Account{}
 	idMap := map[string]bool{}
@@ -1000,7 +1097,7 @@ func (r *GeneratedAccountResultTypeResolver) Count(ctx context.Context, obj *Acc
 		Alias:      TableName("accounts"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &Account{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &Account{})
 }
 
 // GeneratedAccountResolver struct
@@ -1060,9 +1157,6 @@ func AccountPaymentsHandler(ctx context.Context, r *GeneratedResolver, obj *Acco
 
 	items := []*Payment{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Related(&items, "Payments").Error
 	res = items
 
@@ -1075,9 +1169,6 @@ func (r *GeneratedAccountResolver) PaymentsIds(ctx context.Context, obj *Account
 
 	items := []*Payment{}
 	db := r.GetDB(ctx)
-	if db == nil {
-		db = r.DB.Query()
-	}
 	err = db.Model(obj).Select(TableName("payments")+".id").Related(&items, "Payments").Error
 
 	for _, item := range items {
@@ -1152,9 +1243,6 @@ func QueryPaymentChannelHandler(ctx context.Context, r *GeneratedResolver, opts 
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("payment_channels")+".id = ?", *opts.ID)
 	}
@@ -1183,7 +1271,7 @@ type QueryPaymentChannelsHandlerOptions struct {
 	Filter *PaymentChannelFilterType
 }
 
-// PaymentChannels ...
+// PaymentChannels handler options
 func (r *GeneratedQueryResolver) PaymentChannels(ctx context.Context, offset *int, limit *int, q *string, sort []*PaymentChannelSortType, filter *PaymentChannelFilterType) (*PaymentChannelResultType, error) {
 	opts := QueryPaymentChannelsHandlerOptions{
 		Offset: offset,
@@ -1193,6 +1281,32 @@ func (r *GeneratedQueryResolver) PaymentChannels(ctx context.Context, offset *in
 		Filter: filter,
 	}
 	return r.Handlers.QueryPaymentChannels(ctx, r.GeneratedResolver, opts)
+}
+
+// PaymentChannelsItems handler
+func (r *GeneratedResolver) PaymentChannelsItems(ctx context.Context, opts QueryPaymentChannelsHandlerOptions) (res []*PaymentChannel, err error) {
+	resultType, err := r.Handlers.QueryPaymentChannels(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payment_channels"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// PaymentChannelsCount handler
+func (r *GeneratedResolver) PaymentChannelsCount(ctx context.Context, opts QueryPaymentChannelsHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryPaymentChannels(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payment_channels"),
+	}, &PaymentChannel{})
 }
 
 // QueryPaymentChannelsHandler handler
@@ -1232,7 +1346,7 @@ func (r *GeneratedPaymentChannelResultTypeResolver) Items(ctx context.Context, o
 		Alias:      TableName("payment_channels"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*PaymentChannel{}
 	idMap := map[string]bool{}
@@ -1252,7 +1366,7 @@ func (r *GeneratedPaymentChannelResultTypeResolver) Count(ctx context.Context, o
 		Alias:      TableName("payment_channels"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &PaymentChannel{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &PaymentChannel{})
 }
 
 // GeneratedPaymentChannelResolver struct
@@ -1315,9 +1429,6 @@ func QueryPaymentTypeHandler(ctx context.Context, r *GeneratedResolver, opts Que
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("payment_types")+".id = ?", *opts.ID)
 	}
@@ -1346,7 +1457,7 @@ type QueryPaymentTypesHandlerOptions struct {
 	Filter *PaymentTypeFilterType
 }
 
-// PaymentTypes ...
+// PaymentTypes handler options
 func (r *GeneratedQueryResolver) PaymentTypes(ctx context.Context, offset *int, limit *int, q *string, sort []*PaymentTypeSortType, filter *PaymentTypeFilterType) (*PaymentTypeResultType, error) {
 	opts := QueryPaymentTypesHandlerOptions{
 		Offset: offset,
@@ -1356,6 +1467,32 @@ func (r *GeneratedQueryResolver) PaymentTypes(ctx context.Context, offset *int, 
 		Filter: filter,
 	}
 	return r.Handlers.QueryPaymentTypes(ctx, r.GeneratedResolver, opts)
+}
+
+// PaymentTypesItems handler
+func (r *GeneratedResolver) PaymentTypesItems(ctx context.Context, opts QueryPaymentTypesHandlerOptions) (res []*PaymentType, err error) {
+	resultType, err := r.Handlers.QueryPaymentTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payment_types"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// PaymentTypesCount handler
+func (r *GeneratedResolver) PaymentTypesCount(ctx context.Context, opts QueryPaymentTypesHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryPaymentTypes(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payment_types"),
+	}, &PaymentType{})
 }
 
 // QueryPaymentTypesHandler handler
@@ -1395,7 +1532,7 @@ func (r *GeneratedPaymentTypeResultTypeResolver) Items(ctx context.Context, obj 
 		Alias:      TableName("payment_types"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*PaymentType{}
 	idMap := map[string]bool{}
@@ -1415,7 +1552,7 @@ func (r *GeneratedPaymentTypeResultTypeResolver) Count(ctx context.Context, obj 
 		Alias:      TableName("payment_types"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &PaymentType{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &PaymentType{})
 }
 
 // GeneratedPaymentTypeResolver struct
@@ -1478,9 +1615,6 @@ func QueryPaymentHandler(ctx context.Context, r *GeneratedResolver, opts QueryPa
 		},
 	}
 	qb := r.GetDB(ctx)
-	if qb == nil {
-		qb = r.DB.Query()
-	}
 	if opts.ID != nil {
 		qb = qb.Where(TableName("payments")+".id = ?", *opts.ID)
 	}
@@ -1509,7 +1643,7 @@ type QueryPaymentsHandlerOptions struct {
 	Filter *PaymentFilterType
 }
 
-// Payments ...
+// Payments handler options
 func (r *GeneratedQueryResolver) Payments(ctx context.Context, offset *int, limit *int, q *string, sort []*PaymentSortType, filter *PaymentFilterType) (*PaymentResultType, error) {
 	opts := QueryPaymentsHandlerOptions{
 		Offset: offset,
@@ -1519,6 +1653,32 @@ func (r *GeneratedQueryResolver) Payments(ctx context.Context, offset *int, limi
 		Filter: filter,
 	}
 	return r.Handlers.QueryPayments(ctx, r.GeneratedResolver, opts)
+}
+
+// PaymentsItems handler
+func (r *GeneratedResolver) PaymentsItems(ctx context.Context, opts QueryPaymentsHandlerOptions) (res []*Payment, err error) {
+	resultType, err := r.Handlers.QueryPayments(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	err = resultType.GetItems(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payments"),
+	}, &res)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// PaymentsCount handler
+func (r *GeneratedResolver) PaymentsCount(ctx context.Context, opts QueryPaymentsHandlerOptions) (count int, err error) {
+	resultType, err := r.Handlers.QueryPayments(ctx, r, opts)
+	if err != nil {
+		return
+	}
+	return resultType.GetCount(ctx, r.GetDB(ctx), GetItemsOptions{
+		Alias: TableName("payments"),
+	}, &Payment{})
 }
 
 // QueryPaymentsHandler handler
@@ -1558,7 +1718,7 @@ func (r *GeneratedPaymentResultTypeResolver) Items(ctx context.Context, obj *Pay
 		Alias:      TableName("payments"),
 		Preloaders: []string{},
 	}
-	err = obj.GetItems(ctx, r.DB.db, otps, &items)
+	err = obj.GetItems(ctx, r.GetDB(ctx), otps, &items)
 
 	uniqueItems := []*Payment{}
 	idMap := map[string]bool{}
@@ -1578,7 +1738,7 @@ func (r *GeneratedPaymentResultTypeResolver) Count(ctx context.Context, obj *Pay
 		Alias:      TableName("payments"),
 		Preloaders: []string{},
 	}
-	return obj.GetCount(ctx, r.DB.db, opts, &Payment{})
+	return obj.GetCount(ctx, r.GetDB(ctx), opts, &Payment{})
 }
 
 // GeneratedPaymentResolver struct
